@@ -1,34 +1,40 @@
 ﻿@page
-@model Clinica_Privada.Pages.Paciente.Paciente_formModel
+@model Clinica_Privada.Pages.Cita.Cita_formModel
 @{
 }
 
-<!-- Interfaz gráfica html del formulario de Pacientes -->
+<!-- Interfaz gráfica html del formulario de Citas -->
 <body>
     <section class="form-register">
-        <h1>Paciente</h1>
+        <h1>Cita</h1>
         <form method="post" autocomplete="off">
 
-            <input class="controls" type="text" name="cedula" id="cedula" placeholder="Ingrese la cédula" required>
+            <input class="controls" type="text" name="id" id="id" placeholder="Ingrese el número de cita" required>
 
-            <input class="controls" type="text" name="nombre" id="nombre" placeholder="Ingrese el nombre" required>
-
-            <input class="controls" type="text" name="apellido_1" id="apellido_1" placeholder="Ingrese el primer apellido" required>
-
-            <input class="controls" type="text" name="apellido_2" id="apellido_2" placeholder="Ingrese el segundo apellido" required>
-
-            <input class="controls" type="date" name="fecha_nacimiento" id="fecha_nacimiento" required>
-
-            <input class="controls" type="text" name="telefono" id="telefono" placeholder="Ingrese el telefono" required>
-
-            <!-- Agregar el combobox para seleccionar el sexo del paciente -->
-            <select class="controls" name="sexo" id="sexo" required>
-                <option value="sexo">Seleccione el sexo correspondiente</option>
-                <option value="sexo">Masculino</option>
-                <option value="sexo">Femenino</option>
+            <!-- Agregar el combobox para seleccionar la cedula del paciente -->
+            <select class="controls" name="cedula_medico" id="cedula_medico" required>
+                <option value="cedula_medico">Seleccione la cedula del medico</option>
             </select>
 
-            <button type="submit" asp-page-handler="" class="buttoms">Registrar</button>
+            <!-- Agregar el combobox para seleccionar la cedula del paciente -->
+            <select class="controls" name="cedula_paciente" id="cedula_paciente" required>
+                <option value="cedula_paciente">Seleccione la cedula del paciente</option>
+            </select>
+
+            <!-- Agregar el combobox para seleccionar el tratamiento en caso de requerirlo -->
+            <select class="controls" name="id_tratamiento" id="id_tratamiento" >
+                <option value="id_tratamiento">Seleccione el tratamiento</option>
+            </select>
+
+            <input class="controls" type="datetime-local" name="fecha_hora" id="fecha_hora" required>
+
+            <input class="controls" type="text" name="motivo" id="motivo" placeholder="Ingrese el motivo" required>
+
+            <input class="controls" type="text" name="duracion" id="duracion" placeholder="Ingrese la duración" required>
+
+            <input class="controls" type="text" name="resultado" id="resultado" placeholder="Ingrese el resultado" required>
+
+            <button type="submit" asp-page-handler="" class="buttoms">Asignar Cita</button>
 
         </form>
     </section>
