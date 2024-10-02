@@ -1,9 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace Clinica_Privada.Pages.Paciente
+namespace Clinica_Privada.Pages.Reporte
 {
-    public class Paciente_listModel : PageModel
+    public class medicamento_consultaModel : PageModel
     {
         public void OnGet()
         {
