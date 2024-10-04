@@ -11,6 +11,14 @@
 
             <input class="controls" type="text" name="id" id="id" placeholder="Ingrese el número de cita" required>
 
+            <input class="controls" type="datetime-local" name="fecha_hora" id="fecha_hora" required>
+
+            <input class="controls" type="text" name="motivo" id="motivo" placeholder="Ingrese el motivo" required>
+
+            <input class="controls" type="text" name="duracion" id="duracion" placeholder="Ingrese la duración" required>
+
+            <input class="controls" type="text" name="resultado" id="resultado" placeholder="Ingrese el resultado" required>
+
             <!-- Agregar el combobox para seleccionar la cedula del paciente -->
             <select class="controls" name="cedula_medico" id="cedula_medico" required>
                 <option value="cedula_medico">Seleccione la cedula del medico</option>
@@ -22,17 +30,9 @@
             </select>
 
             <!-- Agregar el combobox para seleccionar el tratamiento en caso de requerirlo -->
-            <select class="controls" name="id_tratamiento" id="id_tratamiento" >
+            <select class="controls" name="id_tratamiento" id="id_tratamiento">
                 <option value="id_tratamiento">Seleccione el tratamiento</option>
             </select>
-
-            <input class="controls" type="datetime-local" name="fecha_hora" id="fecha_hora" required>
-
-            <input class="controls" type="text" name="motivo" id="motivo" placeholder="Ingrese el motivo" required>
-
-            <input class="controls" type="text" name="duracion" id="duracion" placeholder="Ingrese la duración" required>
-
-            <input class="controls" type="text" name="resultado" id="resultado" placeholder="Ingrese el resultado" required>
 
             <button type="submit" asp-page-handler="" class="buttoms">Asignar Cita</button>
 

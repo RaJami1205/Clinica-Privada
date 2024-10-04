@@ -1,26 +1,23 @@
 ﻿@page
-@model Clinica_Privada.Pages.Padecimiento.Padecimiento_formModel
+@model Clinica_Privada.Pages.Reporte.Menu_reporteModel
 @{
 }
 
-<!-- Interfaz gráfica html del formulario de Pacientes -->
+<!-- Interfaz gráfica html del menú de Reportes -->
 <body>
     <section class="form-register">
-        <h1>Padecimiento</h1>
+        <h1>Menú Reporte</h1>
         <form method="post" autocomplete="off">
 
-            <!-- Agregar el combobox para seleccionar la cedula del paciente -->
-            <select class="controls" name="cedula_paciente" id="cedula_paciente" required>
-                <option value="sexo">Seleccione la cédula del paciente</option>
-            </select>
+            <a class="btn btn-primary btn-lg" href="/Reporte/paciente_consulta">Consulta de Pacientes</a>
 
-            <input class="controls" type="text" name="nombre" id="nombre" placeholder="Ingrese el nombre" required>
+            <a class="btn btn-primary btn-lg" href="/Reporte/medicamento_consulta">Consulta de Medicamentos</a>
 
-            <input class="controls" type="text" name="sintomas" id="sintomas" placeholder="Ingrese los síntomas" required>
+            <a class="btn btn-primary btn-lg" href="/Reporte/padecimiento_consulta">Consulta de Padecimientos</a>
 
-            <input class="controls" type="date" name="fecha_inicio_sintomas" id="fecha_inicio_sintomas" required>
+            <a class="btn btn-primary btn-lg" href="/Reporte/personal_consulta">Consulta de Personal Medico</a>
 
-            <button type="submit" asp-page-handler="" class="buttoms">Registrar</button>
+            <a class="btn btn-primary btn-lg" href="/Reporte/cita_procedimiento_consulta">Consulta de Citas y Procedimientos</a>
 
         </form>
     </section>
@@ -67,7 +64,7 @@
     }
 
     /* Estilo para el botón de enviar del formulario */
-    .buttoms {
+    .btn {
         width: 100%; /* Ancho completo del botón */
         background: #1f53c5; /* Color de fondo del botón */
         border: none; /* Sin borde para el botón */
