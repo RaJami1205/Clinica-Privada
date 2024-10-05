@@ -1,0 +1,78 @@
+﻿@page
+@model Clinica_Privada.Pages.Asignaciones.cita_tratamientoModel
+@{
+}
+
+<!-- Interfaz gráfica html del formulario de asignación de tratamientos a citas -->
+<body>
+    <section class="form-register">
+        <h1>Asignación de Tratamiento a Cita</h1>
+        <form method="post" autocomplete="off">
+
+            <!-- Agregar el combobox para seleccionar la cita -->
+            <select class="controls" name="id_cita" id="id_cita" required>
+                <option value="id_cita">Seleccione la cita</option>
+            </select>
+
+            <!-- Agregar el combobox para seleccionar el tratamiento de la cita -->
+            <select class="controls" name="id_tratamiento" id="id_tratamiento">
+                <option value="id_tratamiento">Seleccione el tratamiento</option>
+            </select>
+
+            <button type="submit" asp-page-handler="" class="buttoms">Asignar Tratamiento</button>
+
+        </form>
+    </section>
+</body>
+
+<!-- Estilos CSS para la página -->
+<style>
+    /* Resetea márgenes y rellenos, y aplica box-sizing border-box para todos los elementos */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    /* Estilo para el fondo del cuerpo de la página */
+    body {
+        background: linear-gradient(130deg, blue, skyblue);
+    }
+
+    /* Estilo para la sección del formulario de registro */
+    .form-register {
+        width: 400px; /* Ancho del formulario */
+        background: #24303c; /* Color de fondo del formulario */
+        padding: 30px; /* Relleno interno del formulario */
+        margin: auto; /* Centra el formulario horizontalmente */
+        margin-top: 100px; /* Margen superior para separación de la parte superior de la página */
+        border-radius: 4px; /* Bordes redondeados del formulario */
+        font-family: Calibri; /* Fuente del texto en el formulario */
+        color: white; /* Color del texto en el formulario */
+        box-shadow: 7px 13px 37px #000; /* Sombra del formulario para un efecto elevado */
+    }
+
+    /* Estilo para los campos de entrada del formulario */
+    .controls {
+        width: 100%; /* Ancho completo del campo de entrada */
+        background: #24303c; /* Color de fondo del campo de entrada */
+        padding: 10px; /* Relleno interno del campo de entrada */
+        border-radius: 4px; /* Bordes redondeados del campo de entrada */
+        margin-bottom: 16px; /* Margen inferior entre los campos de entrada */
+        border: 1px solid #1f53c5; /* Borde del campo de entrada */
+        font-family: Calibri; /* Fuente del texto en el campo de entrada */
+        font-size: 18px; /* Tamaño de la fuente en el campo de entrada */
+        color: white; /* Color del texto en el campo de entrada */
+    }
+
+    /* Estilo para el botón de enviar del formulario */
+    .buttoms {
+        width: 100%; /* Ancho completo del botón */
+        background: #1f53c5; /* Color de fondo del botón */
+        border: none; /* Sin borde para el botón */
+        padding: 12px; /* Relleno interno del botón */
+        color: white; /* Color del texto en el botón */
+        margin: 16px 0; /* Margen superior e inferior para el botón */
+        font-size: 18px; /* Tamaño de la fuente en el botón */
+    }
+</style>
