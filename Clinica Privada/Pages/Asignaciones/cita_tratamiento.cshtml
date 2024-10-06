@@ -7,16 +7,40 @@
 <body>
     <section class="form-register">
         <h1>Asignación de Tratamiento a Cita</h1>
+
+        @if (Model.mensaje_exito.Length > 0)
+        {
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>@Model.mensaje_exito</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        }
+        @if (Model.mensaje_error.Length > 0)
+        {
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <strong>@Model.mensaje_error</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        }
+
         <form method="post" autocomplete="off">
 
             <!-- Agregar el combobox para seleccionar la cita -->
-            <select class="controls" name="id_cita" id="id_cita" required>
+            <select class="controls" name="id_cita" id="id_cita" required value="@Model.Cita_tratamiento.ID_cita">
                 <option value="id_cita">Seleccione la cita</option>
+                @foreach (var ID in Model.listaCitas)
+                {
+                    <option value="@ID">@ID</option>
+                }
             </select>
 
             <!-- Agregar el combobox para seleccionar el tratamiento de la cita -->
-            <select class="controls" name="id_tratamiento" id="id_tratamiento">
+            <select class="controls" name="id_tratamiento" id="id_tratamiento" required value="@Model.Cita_tratamiento.ID_cita">
                 <option value="id_tratamiento">Seleccione el tratamiento</option>
+                @foreach (var ID in Model.listaTratamientos)
+                {
+                    <option value="@ID">@ID</option>
+                }
             </select>
 
             <button type="submit" asp-page-handler="" class="buttoms">Asignar Tratamiento</button>

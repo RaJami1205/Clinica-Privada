@@ -10,13 +10,21 @@
         <form method="post" autocomplete="off">
 
             <!-- Agregar el combobox para seleccionar el tratamiento -->
-            <select class="controls" name="id_tratamiento" id="id_tratamiento" required>
+            <select class="controls" name="id_tratamiento" id="id_tratamiento" required value="@Model.Tratamiento_Medicamentos.ID_tratamiento">
                 <option value="id_tratamiento">Seleccione el tratamiento</option>
+                @foreach (var ID in Model.listaTratamientos)
+                {
+                    <option value="@ID">@ID</option>
+                }
             </select>
 
             <!-- Agregar el combobox para seleccionar el medicamento del tratamiento -->
-            <select class="controls" name="id_medicamento" id="id_medicamento">
-                <option value="id_medicamento">Seleccione el medicamento</option>
+            <select class="controls" name="nombre_medicamento" id="nombre_medicamento" required value="@Model.Tratamiento_Medicamentos.nombre_medicamento">
+                <option value="nombre_medicamento">Seleccione el medicamento</option>
+                @foreach (var nombre in Model.listaMedicamentos)
+                {
+                    <option value="@nombre">@nombre</option>
+                }
             </select>
 
             <button type="submit" asp-page-handler="" class="buttoms">Asignar Medicamento</button>

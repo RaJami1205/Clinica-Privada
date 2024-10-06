@@ -3,4 +3,26 @@
 @{
 }
 
-<h1>Consulta de Padecimientos</h1>
+<!-- Interfaz gráfica html del Reporte de Padecimientos -->
+<br />
+<h2> Consulta de Padecimientos </h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Año</th>
+            <th>Cantidad Padecidas</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var padecimiento in Model.listaPadecimientos)
+        {
+            <tr>
+                <td>@padecimiento.nombre</td>
+                <td>@padecimiento.año</td>
+                <td>@padecimiento.cantidad</td>
+            </tr>
+        }
+    </tbody>
+</table>

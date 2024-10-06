@@ -3,4 +3,36 @@
 @{
 }
 
-<h1>Consulta de Citas y Procedimientos</h1>
+<!-- Interfaz gráfica html del Reporte de Citas y Procedimientos -->
+<br />
+<h2> Consulta de Citas y Procedimientos</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Apellido 1</th>
+            <th>Apellido 2</th>
+            <th>Cantidad de Padecimientos</th>
+            <th>Cantidad de Citas</th>
+            <th>Cantidad de Procedimientos</th>
+            <th>Cantidad de Medicamentos</th>
+            <th>Cita más Reciente</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var citaProcedimiento in Model.listaCitasProcedimientos)
+        {
+            <tr>
+                <td>@citaProcedimiento.nombre</td>
+                <td>@citaProcedimiento.apellido1</td>
+                <td>@citaProcedimiento.apellido2</td>
+                <td>@citaProcedimiento.cantidad_padecimientos</td>
+                <td>@citaProcedimiento.cantidad_citas</td>
+                <td>@citaProcedimiento.cantidad_procedimientos</td>
+                <td>@citaProcedimiento.cantidad_medicamentos</td>
+                <td>@citaProcedimiento.ultima_cita</td>
+            </tr>
+        }
+    </tbody>
+</table>

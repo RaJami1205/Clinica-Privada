@@ -3,4 +3,30 @@
 @{
 }
 
-<h1>Consulta de Pacientes</h1>
+<!-- Interfaz gráfica html del Reporte de Pacientes por cantidad de citas -->
+<br />
+<h2> Consulta de Pacientes </h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Apellido 1</th>
+            <th>Apellido 2</th>
+            <th>Sexo</th>
+            <th>Cantidad de Atenciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var paciente in Model.listaPacientes)
+        {
+            <tr>
+                <td>@paciente.nombre</td>
+                <td>@paciente.apellido1</td>
+                <td>@paciente.apellido2</td>
+                <td>@paciente.sexo</td>
+                <td>@paciente.cantidadCitas</td>
+            </tr>
+        }
+    </tbody>
+</table>

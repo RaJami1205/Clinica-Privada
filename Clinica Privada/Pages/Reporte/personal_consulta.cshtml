@@ -3,4 +3,32 @@
 @{
 }
 
-<h1>Consulta de Personales Médicos</h1>
+<!-- Interfaz gráfica html del Reporte del Personal Médico -->
+<br />
+<h2> Consulta del Personal Médico </h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Apellido 1</th>
+            <th>Apellido 2</th>
+            <th>Cantidad de Citas</th>
+            <th>Cantidad de Procedimientos</th>
+            <th>Cantidad de Medicamentos</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var personal in Model.listaPersonales)
+        {
+            <tr>
+                <td>@personal.nombre</td>
+                <td>@personal.apellido1</td>
+                <td>@personal.apellido2</td>
+                <td>@personal.cantidad_citas</td>
+                <td>@personal.cantidad_procedimientos</td>
+                <td>@personal.cantidad_medicamentos</td>
+            </tr>
+        }
+    </tbody>
+</table>

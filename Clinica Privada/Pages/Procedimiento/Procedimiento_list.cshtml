@@ -7,14 +7,29 @@
 <br />
 <h2> Lista de Procedimientos </h2>
 <a class="btn btn-primary btn-sm" href="/Procedimiento/Procedimiento_form">Nuevo Procedimiento</a>
+<a class="btn btn-primary btn-sm" href="/Asignaciones/procedimiento_tratamiento">Asignar Tratamientos</a>
+<a class="btn btn-primary btn-sm" href="/Asignaciones/procedimiento_asistente">Asignar Asistentes</a>
+
 <table class="table">
     <thead>
         <tr>
             <th>ID</th>
-            <th>Médico</th>
+            <th>Médico Operación</th>
             <th>Paciente</th>
             <th>Fecha</th>
             <th>Motivo</th>
         </tr>
     </thead>
+    <tbody>
+        @foreach (var procedimiento in Model.listaProcedimientos)
+        {
+            <tr>
+                <td>@procedimiento.ID</td>
+                <td>@procedimiento.cedula_medico</td>
+                <td>@procedimiento.cedula_paciente</td>
+                <td>@procedimiento.fecha</td>
+                <td>@procedimiento.motivo</td>
+            </tr>
+        }
+    </tbody>
 </table>

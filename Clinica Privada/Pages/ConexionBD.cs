@@ -7,10 +7,6 @@ namespace Clinica_Privada.Pages
     {
         public MySqlConnection ConectarBD = new MySqlConnection("server=localhost;user id=root;database=clinica_privada;password=Albatroz1205$");
 
-        public ConexionBD()
-        {
-        }
-
         // Método para abrir la conexión
         public void abrir()
         {

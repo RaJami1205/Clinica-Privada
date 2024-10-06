@@ -7,31 +7,49 @@
 <body>
     <section class="form-register">
         <h1>Cita</h1>
+
+        @if (Model.mensaje_exito.Length > 0)
+        {
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>@Model.mensaje_exito</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        }
+        @if (Model.mensaje_error.Length > 0)
+        {
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <strong>@Model.mensaje_error</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        }
+
         <form method="post" autocomplete="off">
+            <input class="controls" type="text" name="id" id="id" placeholder="Ingrese el número de cita" required value="@Model.Cita.ID">
 
-            <input class="controls" type="text" name="id" id="id" placeholder="Ingrese el número de cita" required>
+            <input class="controls" type="datetime-local" name="fecha_hora" id="fecha_hora" required value="@Model.Cita.fecha_hora">
 
-            <input class="controls" type="datetime-local" name="fecha_hora" id="fecha_hora" required>
+            <input class="controls" type="text" name="motivo" id="motivo" placeholder="Ingrese el motivo" required value="@Model.Cita.motivo">
 
-            <input class="controls" type="text" name="motivo" id="motivo" placeholder="Ingrese el motivo" required>
+            <input class="controls" type="text" name="duracion" id="duracion" placeholder="Ingrese la duración" required value="@Model.Cita.duracion">
 
-            <input class="controls" type="text" name="duracion" id="duracion" placeholder="Ingrese la duración" required>
-
-            <input class="controls" type="text" name="resultado" id="resultado" placeholder="Ingrese el resultado" required>
+            <input class="controls" type="text" name="resultado" id="resultado" placeholder="Ingrese el resultado" required value="@Model.Cita.resultado">
 
             <!-- Agregar el combobox para seleccionar la cedula del paciente -->
-            <select class="controls" name="cedula_medico" id="cedula_medico" required>
+            <select class="controls" name="cedula_medico" id="cedula_medico" required value="@Model.Cita.cedula_medico">
                 <option value="cedula_medico">Seleccione la cedula del medico</option>
+                @foreach (var cedula in Model.listaCedulaMedico)
+                {
+                    <option value="@cedula">@cedula</option>
+                }
             </select>
 
             <!-- Agregar el combobox para seleccionar la cedula del paciente -->
-            <select class="controls" name="cedula_paciente" id="cedula_paciente" required>
+            <select class="controls" name="cedula_paciente" id="cedula_paciente" required value="@Model.Cita.cedula_paciente">
                 <option value="cedula_paciente">Seleccione la cedula del paciente</option>
-            </select>
-
-            <!-- Agregar el combobox para seleccionar el tratamiento en caso de requerirlo -->
-            <select class="controls" name="id_tratamiento" id="id_tratamiento">
-                <option value="id_tratamiento">Seleccione el tratamiento</option>
+                @foreach (var cedula in Model.listaCedulaPaciente)
+                {
+                    <option value="@cedula">@cedula</option>
+                }
             </select>
 
             <button type="submit" asp-page-handler="" class="buttoms">Asignar Cita</button>

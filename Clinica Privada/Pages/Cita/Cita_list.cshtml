@@ -7,14 +7,30 @@
 <br />
 <h2> Lista de Citas </h2>
 <a class="btn btn-primary btn-sm" href="/Cita/Cita_form">Nueva Cita</a>
+<a class="btn btn-primary btn-sm" href="/Asignaciones/cita_tratamiento">Asignar Tratamientos</a>
+
 <table class="table">
     <thead>
         <tr>
+            <th>ID</th>
             <th>Médico</th>
             <th>Paciente</th>
-            <th>Tratamientos</th>
-            <th>Medicamentos</th>
+            <th>Fecha</th>
+            <th>Motivo</th>
             <th>Resultados</th>
         </tr>
     </thead>
+    <tbody>
+        @foreach (var cita in Model.listaCitas)
+        {
+            <tr>
+                <td>@cita.ID</td>
+                <td>@cita.cedula_medico</td>
+                <td>@cita.cedula_paciente</td>
+                <td>@cita.fecha_hora</td>
+                <td>@cita.motivo</td>
+                <td>@cita.resultado</td>
+            </tr>
+        }
+    </tbody>
 </table>

@@ -3,4 +3,28 @@
 @{
 }
 
-<h1>Consulta de Medicamentos</h1>
+<!-- Interfaz gráfica html del Reporte de Medicamentos -->
+<br />
+<h2> Consulta de Medicamentos </h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Año</th>
+            <th>Mes</th>
+            <th>Cantidad Utilizada</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var medicamento in Model.listaMedicamentos)
+        {
+            <tr>
+                <td>@medicamento.nombre</td>
+                <td>@medicamento.año</td>
+                <td>@medicamento.mes</td>
+                <td>@medicamento.cantidad</td>
+            </tr>
+        }
+    </tbody>
+</table>
